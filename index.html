@@ -22,8 +22,8 @@
       </div>
       <div class="card-body">
         <blockquote class="blockquote mb-0">
-          <p id="quote">Bon… On a finalement compris pourquoi le référencement ne décollait pas sur votre site : on avait bloqué les robots de Google.</p>
-          <footer class="blockquote-footer" id="author">webagencyfail.com</footer>
+          <p id="quote"></p>
+          <footer class="blockquote-footer" id="author"></footer>
         </blockquote>
       </div>
     </div>
@@ -75,6 +75,23 @@
         </form>
       </div>
     </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Champs invalides !</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Vos champs sont vides !
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close-modal">Fermer</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Optional JavaScript -->
@@ -86,6 +103,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
   <!-- Inclusion de notre fichier JS dans le fichier HTML -->
+  <script src="js/quote.js"></script>
   <script src="js/app.js"></script>
 </body>
 
