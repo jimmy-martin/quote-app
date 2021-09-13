@@ -14,8 +14,8 @@ const app = {
         document.getElementById('btnDisplayAddForm').addEventListener('click', app.handleClickOnDisplayAddFormButton);
 
         // TODO afficher la première citation de fail
-        document.getElementById('quote').innerText = quotes[app.currentQuoteIndex]['quote'];
-        document.getElementById('author').innerText = quotes[app.currentQuoteIndex]['author'];
+        document.getElementById('quote').innerText = quotes[0]['quote'];
+        document.getElementById('author').innerText = quotes[0]['author'];
 
         // TODO attacher la méthode app.handleClickOnNextButton à l'évènement "click" sur le bouton "next" (id="nav-next")
         document.getElementById('nav-next').addEventListener('click', app.handleClickOnNextButton);
