@@ -8,6 +8,11 @@
 const app = {
     // Propriété "counter"
     currentQuoteIndex: 0,
+    // Ma fenêtre en cas d'erreur sur le formulaire
+    myModal: new bootstrap.Modal(document.getElementById('myModal'), {
+        keyboard: true,
+        focus: true
+    }),
     // Méthode appelée au chargement du DOM
     init: function () {
         // attache la méthode app.handleClickOnDisplayAddFormButton à l'évènement "click" sur le bouton "ajouter une citation"
@@ -27,6 +32,8 @@ const app = {
 
         document.getElementById('addQuoteForm').addEventListener('submit', app.handleFormSubmit);
 
+        document.getElementById('close-modal').addEventListener('click', app.handleClickOnCloseModalButton);
+
         console.log(quotes.length);
 
     },
@@ -36,17 +43,28 @@ const app = {
 
         let userQuote = document.getElementById('input-quote').value.toString();
         let userAuthor = document.getElementById('input-author').value.toString();
-        console.log('Vous avez bien ajouté: "' + userQuote + '" de ' + userAuthor);
+        if (userQuote === '' && userAuthor === '') {
+            app.myModal.show();
+        } else {
+            console.log('Vous avez bien ajouté: "' + userQuote + '" de ' + userAuthor);
 
-        let blockQuote = {
-            quote: userQuote,
-            author: userAuthor
-        };
+            let blockQuote = {
+                quote: userQuote,
+                author: userAuthor
+            };
 
-        quotes.push(blockQuote);
+            quotes.push(blockQuote);
 
-        document.getElementById('divAddQuote').classList.add('d-none');
+            document.getElementById('divAddQuote').classList.add('d-none');
+        }
+        
+        // Remise à zéro des input
+        document.getElementById('input-author').value = document.getElementById('input-quote').value = '';
+        
+    },
 
+    handleClickOnCloseModalButton: function () {
+        app.myModal.hide();
     },
 
     // Méthode gérant le click pour afficher le form d'ajout
