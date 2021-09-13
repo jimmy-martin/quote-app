@@ -19,6 +19,11 @@ const app = {
 
         // TODO attacher la méthode app.handleClickOnNextButton à l'évènement "click" sur le bouton "next" (id="nav-next")
         document.getElementById('nav-next').addEventListener('click', app.handleClickOnNextButton);
+
+
+        document.getElementById('nav-prev').addEventListener('click', app.handleClickOnPrevButton);
+
+
     },
     // Méthode gérant le click pour afficher le form d'ajout
     handleClickOnDisplayAddFormButton: function(evt) {
@@ -39,6 +44,13 @@ const app = {
       console.log('click on next');
     
       app.currentQuoteIndex++;
+      app.displayCurrentQuote();
+    },
+
+    handleClickOnPrevButton: function() {
+        console.log('click on previous');
+    
+      app.currentQuoteIndex--;
       app.displayCurrentQuote();
     }
   };
