@@ -39,8 +39,8 @@ const app = {
         console.log('Vous avez bien ajouté: "' + userQuote + '" de ' + userAuthor);
 
         let blockQuote = {
-            quote : userQuote,
-            author : userAuthor
+            quote: userQuote,
+            author: userAuthor
         };
 
         quotes.push(blockQuote);
@@ -66,16 +66,22 @@ const app = {
     // Je crée une méthode dédiée à la gestion du click sur le bouton "Next"
     handleClickOnNextButton: function () {
         console.log('click on next');
-
-        app.currentQuoteIndex++;
-        app.displayCurrentQuote();
+        if (app.currentQuoteIndex === quotes.length - 1) {
+            app.displayCurrentQuote();
+        } else {
+            app.currentQuoteIndex++;
+            app.displayCurrentQuote();
+        }
     },
 
     handleClickOnPrevButton: function () {
         console.log('click on previous');
-
-        app.currentQuoteIndex--;
-        app.displayCurrentQuote();
+        if (app.currentQuoteIndex === 0) {
+            app.displayCurrentQuote();
+        } else {
+            app.currentQuoteIndex--;
+            app.displayCurrentQuote();
+        }
     },
 
     handleClickOnFirstButton: function () {
