@@ -25,8 +25,30 @@ const app = {
         document.getElementById('nav-first').addEventListener('click', app.handleClickOnFirstButton);
         document.getElementById('nav-last').addEventListener('click', app.handleClickOnLastButton);
 
+        document.getElementById('addQuoteForm').addEventListener('submit', app.handleFormSubmit);
+
+        console.log(quotes.length);
 
     },
+
+    handleFormSubmit: function (evt) {
+        evt.preventDefault();
+
+        let userQuote = document.getElementById('input-quote').value.toString();
+        let userAuthor = document.getElementById('input-author').value.toString();
+        console.log('Vous avez bien ajouté: "' + userQuote + '" de ' + userAuthor);
+
+        let blockQuote = {
+            quote : userQuote,
+            author : userAuthor
+        };
+
+        quotes.push(blockQuote);
+
+        document.getElementById('divAddQuote').classList.add('d-none');
+
+    },
+
     // Méthode gérant le click pour afficher le form d'ajout
     handleClickOnDisplayAddFormButton: function (evt) {
         console.log('click to display form');
@@ -63,7 +85,7 @@ const app = {
         app.displayCurrentQuote();
     },
 
-    handleClickOnLastButton: function(){
+    handleClickOnLastButton: function () {
         console.log('click on last');
 
         app.currentQuoteIndex = quotes.length - 1;
