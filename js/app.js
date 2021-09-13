@@ -14,8 +14,8 @@ const app = {
         document.getElementById('btnDisplayAddForm').addEventListener('click', app.handleClickOnDisplayAddFormButton);
 
         // TODO afficher la première citation de fail
-        document.getElementById('quote').innerHTML = quotes[app.currentQuoteIndex]['quote'];
-        document.getElementById('author').innerHTML = quotes[app.currentQuoteIndex]['author'];
+        document.getElementById('quote').innerText = quotes[app.currentQuoteIndex]['quote'];
+        document.getElementById('author').innerText = quotes[app.currentQuoteIndex]['author'];
 
         // TODO attacher la méthode app.handleClickOnNextButton à l'évènement "click" sur le bouton "next" (id="nav-next")
         document.getElementById('nav-next').addEventListener('click', app.handleClickOnNextButton);
@@ -35,8 +35,8 @@ const app = {
     displayCurrentQuote: function() {
         // TODO se baser sur app.currentQuoteIndex pour afficher la quote "courante"
 
-        document.getElementById('quote').innerHTML = quotes[app.currentQuoteIndex]['quote'];
-        document.getElementById('author').innerHTML = quotes[app.currentQuoteIndex]['author'];
+        document.getElementById('quote').innerText = quotes[app.currentQuoteIndex]['quote'];
+        document.getElementById('author').innerText = quotes[app.currentQuoteIndex]['author'];
 
     },
     // Je crée une méthode dédiée à la gestion du click sur le bouton "Next"
