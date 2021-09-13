@@ -23,6 +23,7 @@ const app = {
 
         document.getElementById('nav-prev').addEventListener('click', app.handleClickOnPrevButton);
         document.getElementById('nav-first').addEventListener('click', app.handleClickOnFirstButton);
+        document.getElementById('nav-last').addEventListener('click', app.handleClickOnLastButton);
 
 
     },
@@ -56,9 +57,16 @@ const app = {
     },
 
     handleClickOnFirstButton: function () {
-        console.log('click on previous');
+        console.log('click on first');
 
         app.currentQuoteIndex = 0;
+        app.displayCurrentQuote();
+    },
+
+    handleClickOnLastButton: function(){
+        console.log('click on last');
+
+        app.currentQuoteIndex = quotes.length - 1;
         app.displayCurrentQuote();
     }
 };
